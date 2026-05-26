@@ -24,17 +24,23 @@ body {
   z-index: -1;
 
   background:
-    radial-gradient(circle at top left,
+    radial-gradient(
+      circle at top left,
       rgba(123, 97, 255, 0.18),
-      transparent 30%),
+      transparent 30%
+    ),
 
-    radial-gradient(circle at top right,
+    radial-gradient(
+      circle at top right,
       rgba(159, 122, 234, 0.12),
-      transparent 35%),
+      transparent 35%
+    ),
 
-    radial-gradient(circle at bottom left,
+    radial-gradient(
+      circle at bottom left,
       rgba(123, 97, 255, 0.08),
-      transparent 35%),
+      transparent 35%
+    ),
 
     #f7f7fa;
 }
@@ -42,9 +48,13 @@ body {
 /* GLASS EFFECT */
 .glass-card {
   backdrop-filter: blur(24px);
+
   background: rgba(255,255,255,0.55);
+
   border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.05);
 }
 
 /* SECTION SPACING */
@@ -53,30 +63,7 @@ body {
   padding-bottom: 120px;
 }
 
-/* DARK MODE */
-html.dark body {
-  background: #09090b;
-  color: white;
-}
-
-html.dark .glass-card {
-  background: rgba(24,24,27,0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-html.dark .gradient-bg {
-  background:
-    radial-gradient(circle at top left,
-      rgba(123,97,255,0.15),
-      transparent 30%),
-
-    radial-gradient(circle at bottom right,
-      rgba(159,122,234,0.12),
-      transparent 30%),
-
-    #09090b;
-}
-
+/* NOISE */
 .noise {
   position: fixed;
   inset: 0;
@@ -88,6 +75,7 @@ html.dark .gradient-bg {
     url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
+/* GRID BACKGROUND */
 .grid-background {
   position: fixed;
   inset: 0;
@@ -95,37 +83,27 @@ html.dark .gradient-bg {
 
   background-image:
     linear-gradient(
-      rgba(255,255,255,0.04) 1px,
+      rgba(0,0,0,0.03) 1px,
       transparent 1px
     ),
+
     linear-gradient(
       90deg,
-      rgba(255,255,255,0.04) 1px,
+      rgba(0,0,0,0.03) 1px,
       transparent 1px
     );
 
   background-size: 60px 60px;
 
-  mask-image: radial-gradient(
-    ellipse at center,
-    black 40%,
-    transparent 90%
-  );
-}
-
-html.dark .grid-background {
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 40%,
+      transparent 90%
     );
 }
 
+/* SECTION DIVIDER */
 .section-divider {
   position: relative;
 }
@@ -134,6 +112,7 @@ html.dark .grid-background {
   content: '';
 
   position: absolute;
+
   left: 50%;
   bottom: -120px;
 
@@ -144,7 +123,8 @@ html.dark .grid-background {
 
   border-radius: 999px;
 
-  background: rgba(123, 97, 255, 0.12);
+  background:
+    rgba(123, 97, 255, 0.12);
 
   filter: blur(90px);
 
@@ -152,6 +132,7 @@ html.dark .grid-background {
   z-index: -1;
 }
 
+/* HOVER GLOW */
 .hover-glow {
   position: relative;
   overflow: hidden;
@@ -177,35 +158,4 @@ html.dark .grid-background {
 
 .hover-glow:hover::before {
   opacity: 1;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #f5f2ff;
-  color: #18181b;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.dark body {
-  background: #09090b;
-  color: white;
-}
-
-.dark .glass-card {
-  background: rgba(24,24,27,0.72);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.dark .gradient-bg {
-  background:
-    radial-gradient(
-      circle at top,
-      rgba(123,97,255,0.25),
-      transparent 40%
-    );
 }
